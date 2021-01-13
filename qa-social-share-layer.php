@@ -142,6 +142,8 @@
 
         function q_view_buttons( $q_view )
         {
+            parent::q_view_buttons( $q_view );
+            
             if ( (int) qa_opt( qa_sss_opt::BUTTON_STATUS ) ) {
                 $page_url = qa_path_absolute( qa_request() );
                 $page_title = $q_view['raw']['title'];
@@ -161,8 +163,6 @@
                 $social_share->generateShareButtons();
                 $this->output( '</div>' );
             }
-            
-            parent::q_view_buttons( $q_view );
         }
 
     }
